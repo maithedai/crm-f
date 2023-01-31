@@ -1,0 +1,24 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="crm_dashboard.bc_trading">
+        <div class="vt-dashboard">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 db-grid bx-sd">
+                        <canvas id="pieChart1"></canvas>
+                    </div>
+                    <div class="col-6 db-grid d-flex flex-column justify-content-between">
+                        <div class="box-item bx-sd">
+                            <canvas id="pieChart2"></canvas>
+                        </div>
+                        <div class="box-item bx-sd">
+                            <canvas id="pieChart3"></canvas>
+                        </div>
+                        <div class="box-item bx-sd">
+                            <canvas id="pieChart4"></canvas>
+                        </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </t>
+</templates>

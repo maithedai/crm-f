@@ -1,0 +1,512 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="crm_dashboard.dashboard_header">
+        <div class="header-dashboard hd-padding">
+            <div class="col-xl-10 col-md-12 col-12">
+                <div class="layout-button-header">
+                    <div id="collapseOneOne" class="row filter-header-width display-update-hd collapse show" style="margin-top:10px">
+                        <t t-call="crm_dashboard.search_template"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="crm_dashboard.dashboard_header2">
+        <div class="header-dashboard hd-padding">
+            <div class="layout-button-header">
+                <div class="" style="display:flex;margin-left: 6px" data-toggle="collapse" aria-expanded="false"
+                     id="filter-drop-header" data-target="#collapseOneOne">
+                    <div class="" style="align-items:flex-end !important">
+                    <button class="btn btn-secondary all-filter-header"
+                            style="width:25px;height:25px !important;padding:unset !important;">
+                        <i class="fa fa-minus-square-o fa-lg" style="line-height: 0 !important;"></i>
+                    </button>
+                </div>
+                    <div class="box-setting-custom box-margin-1"><p>Bộ lọc</p></div>
+                </div>
+                <div style="margin-top:10px"></div>
+                <div id="collapseOneOne" class="display-update-hd collapse">
+                    <t t-call="crm_dashboard.search_template"/>
+                </div>
+            </div>
+        </div>
+    </t>
+    <div t-name="crm_dashboard.search_template_date_filter">
+        <button type="button"
+                class="style_filter_option btn btn-secondary dropdown-toggle filter-width-layout-hd"
+                data-toggle="dropdown">
+            <span class="fa" title="Dates" role="img" aria-label="Dates"/>
+            <t t-if="options['date']['string'] and options['date']['filter'] != 'custom'">
+                <t t-esc="options['date']['string']"/>
+            </t>
+            <t t-if="options['date']['filter'] == 'custom'">
+                <t t-if="options['date']['mode'] == 'single'">Date:
+                    <span class="js_format_date">
+                        <t t-esc="options['date']['date_to']"/>
+                    </span>
+                </t>
+                <t t-if="options['date']['mode'] == 'range'">From:
+                    <span class="js_format_date">
+                        <t t-esc="options['date']['date_from']"/>
+                    </span>
+                    <br/>
+                    <span class="o_reports_date_to">to:
+                        <span class="js_format_date">
+                            <t t-esc="options['date']['date_to']"/>
+                        </span>
+                    </span>
+                </t>
+            </t>
+        </button>
+        <div class="dropdown-menu o_filter_menu" role="menu">
+            <t t-if="options['date']['mode'] == 'single'">
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="Today"
+                   data-filter="today">Hôm nay
+                </a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="End of Last Month"
+                   data-filter="last_month">End of Last Month
+                </a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter" title="End of Last Quarter"
+                   data-filter="last_quarter">End of Last Quarter
+                </a>
+                <a role="menuitem" class="dropdown-item js_account_report_date_filter"
+                   title="End of Last Financial Year" data-filter="last_year">End of Last Financial Year
+                </a>
+            </t>
+            <t t-if="options['date']['mode'] == 'range'">
+                <a role="menuitem" class="test dropdown-item js_account_report_date_filter"
+                   data-filter="this_month">Tháng này
+                </a>
+                <a role="menuitem" class="test dropdown-item js_account_report_date_filter"
+                   data-filter="this_quarter">Quý này
+                </a>
+                <a role="menuitem" class="test dropdown-item js_account_report_date_filter"
+                   data-filter="this_year">Năm nay
+                </a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a role="menuitem" class="test dropdown-item js_account_report_date_filter"
+                   data-filter="last_month">Tháng trước
+                </a>
+                <a role="menuitem" class="test dropdown-item js_account_report_date_filter"
+                   data-filter="last_quarter">Quý trước
+                </a>
+                <a role="menuitem" class="test dropdown-item js_account_report_date_filter"
+                   data-filter="last_year">Năm trước
+                </a>
+            </t>
+            <t t-if="options['date']['custom_compare']">
+                <div role="separator" class="dropdown-divider"></div>
+                <a role="menuitem" class="test dropdown-item js_foldable_trigger o_closed_menu"
+                   data-filter='custom_filter_date'>
+                Custom
+                </a>
+                <div class="o_foldable_menu o_closed_menu o_account_report_search" data-filter='custom_filter_date'>
+                    <t t-if="options['date']['mode'] == 'range'">
+                        <label class="custom-date" for="date_from">Từ Ngày: </label>
+                        <div class="form-group custom-date">
+                            <div class='o_datepicker js_account_reports_datetimepicker'
+                                 t-att-data-default-value="options['date']['date_from']">
+                                <input type='text' class="o_datepicker_input" name="date_from"/>
+                                <span class="o_datepicker_button"/>
+                            </div>
+                        </div>
+                    </t>
+                    <label class="custom-date" for="date_to"
+                           t-if="options['date']['mode'] == 'single'">Đến Ngày: </label>
+                    <label class="custom-date" for="date_to"
+                           t-if="options['date']['mode'] == 'range'">Đến Ngày: </label>
+                    <div class="form-group custom-date">
+                        <div class='o_datepicker js_account_reports_datetimepicker'
+                             t-att-data-default-value="options['date']['date_to']">
+                            <input type='text' class="o_datepicker_input" name="date_to"/>
+                            <span class="o_datepicker_button"/>
+                        </div>
+                    </div>
+                    <button type="button" class="apply-custom-date js_account_report_date_filter" data-filter="custom">Apply
+                    </button>
+                </div>
+            </t>
+        </div>
+    </div>
+
+    <!-- template search branch-->
+    <div t-name="crm_dashboard.search_template_branches">
+        <button class="style_filter_option btn btn-secondary dropdown-toggle filter-width-layout-hd"
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Đơn vị:
+            <t t-set="selected_branches" t-value="'False'"/>
+            <t t-foreach="options['branches']" t-as="branches">
+                <t t-if="branches['selected']">
+                    <t t-if="selected_branches == 'True'">,</t>
+                    <t t-esc="branches['code']"/>
+                    <t t-set="selected_branches" t-value="'True'"/>
+                </t>
+            </t>
+            <t t-if="selected_branches == 'False'">
+                Tất cả
+            </t>
+        </button>
+        <div class="dropdown-menu o_filter_menu" role="menu">
+            <t t-foreach="options['branches']" t-as="j">
+                <t t-if="j['id'] != 'divider'">
+                    <t t-if="j['id'] == 'group'">
+                        <a role="menuitem" class="dropdown-item js_account_report_group_choice_filter reset_data_filter"
+                           data-filter="branches" t-att-data-id="j['id']" t-att-data-member-ids="j['ids']">
+                            <t t-esc="j['name']"/>
+                        </a>
+                    </t>
+                    <t t-else="">
+                        <a role="menuitem" class="dropdown-item js_account_report_choice_filter reset_data_filter"
+                           t-att-title="j['name']+ '-' + j['code']" t-att-data-id="j['id']" data-filter="branches">
+                            <t t-esc="j['name']"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </div>
+
+    <div t-name="crm_dashboard.search_template_campaign">
+        <button type="button"
+                class="style_filter_option btn btn-secondary dropdown-toggle filter-width-layout-hd"
+                data-toggle="dropdown"
+                style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+            <span class="fa"/>
+            Chiến dịch:
+            <t t-foreach="options['campaign']" t-as="campaign">
+            <t t-if="campaign['selected']">
+                <t t-esc="campaign['code']"/>
+            </t>
+        </t>
+        </button>
+        <div class="dropdown-menu o_filter_menu" role="menu">
+            <t t-foreach="options['campaign']" t-as="j">
+                <a role="menuitem" class="dropdown-item js_account_reports_one_choice_filter"
+                   t-att-title="j['name']+ '-' + j['code']" t-att-data-id="j['id']" data-filter="campaign">
+                    <t t-esc="j['name']"/>
+                </a>
+            </t>
+        </div>
+    </div>
+
+    <!-- template search branch-->
+    <div t-name="crm_dashboard.search_template_branch">
+        <button type="button"
+                class="style_filter_option btn btn-secondary dropdown-toggle filter-width-layout-hd"
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Đơn vị:
+            <t t-set="selected_branches" t-value="'False'"/>
+            <t t-foreach="options['branch']" t-as="branch">
+                <t t-if="branch['selected']">
+                    <t t-if="selected_branches == 'True'">,</t>
+                    <t t-esc="branch['code']"/>
+                    <t t-set="selected_branches" t-value="'True'"/>
+                </t>
+            </t>
+            <t t-if="selected_branches == 'False'">
+                Tất cả
+            </t>
+        </button>
+        <div class="dropdown-menu o_filter_menu" role="menu">
+            <t t-foreach="options['branch']" t-as="j">
+                <t t-if="j['id'] == 'divider'">
+                    <div role="separator" class="dropdown-divider"/>
+                    <b role="menuitem" class="ml4 dropdown-item-text">
+                        <t t-esc="j['name']"/>
+                    </b>
+                    <div role="separator" class="dropdown-divider"/>
+                </t>
+                <t t-if="j['id'] != 'divider'">
+                    <t t-if="j['id'] == 'group'">
+                        <a role="menuitem"
+                           class="test dropdown-item js_account_report_group_choice_filter reset_data_filter"
+                           data-filter="branch" t-att-data-id="j['id']" t-att-data-member-ids="j['ids']">
+                            <t t-esc="j['name']"/>
+                        </a>
+                    </t>
+                    <t t-else="">
+                        <a role="menuitem"
+                           class="test dropdown-item js_account_reports_one_choice_filter reset_data_filter"
+                           t-att-title="j['name']+ '-' + j['code']" t-att-data-id="j['id']" data-filter="branch">
+                            <t t-esc="j['name']"/>
+                        </a>
+                    </t>
+                </t>
+            </t>
+        </div>
+    </div>
+
+    <div t-name="report_viewer.search_template_top_selling">
+        <button t-if="options['top_selling']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle top_selling_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Sản phẩm
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_top_selling_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_cus_type">
+        <button t-if="options['cus_type']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle cus_type_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Loại khách hàng
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_cus_type_m2m"/>
+        </ul>
+    </div>
+
+    <div t-name='crm_dashboard.m2mWidgetTable' class="option_filter_hack o_form_view filter-setting"
+         style="background-color:#FFFFFF !important">
+        <table class="o_group o_inner_group">
+            <tr t-foreach="fields" t-as="field">
+                <td class="o_td_label">
+                    <label class="o_form_label" t-esc="fields[field].label"/>
+                </td>
+                <td t-att-id="field + '_field'" style="padding:0px !important;"/>
+            </tr>
+        </table>
+    </div>
+
+    <div t-name="crm_dashboard.search_template_partner">
+        <button t-if="options['partner']" type="button"
+                class="style_filter_option btn btn-secondary dropdown-toggle account_partner_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Đối tượng
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_account_partner_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_product">
+        <button t-if="options['product']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle product_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Sản phẩm
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_product_m2m"/>
+        </ul>
+    </div>
+    <div t-name="crm_dashboard.search_template_department">
+        <button t-if="options['department']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle department_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Phòng ban
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_department_m2m reset_data_filter"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_source">
+        <button t-if="options['source']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle source_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Nguồn
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_source_m2m"/>
+        </ul>
+    </div>
+    <div t-name="crm_dashboard.search_template_res_users">
+        <button t-if="options['res_user']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle res_user_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Nhân viên
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_res_user_m2m"/>
+        </ul>
+    </div>
+    <div t-name="crm_dashboard.search_template_user">
+        <button t-if="options['user']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle user_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Nhân viên
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_user_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_product_group">
+        <button t-if="options['product_group']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle product_group_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Nhóm sản phẩm
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_product_group_m2m"/>
+        </ul>
+    </div>
+
+    <div t-name="report_viewer.search_template_size_company">
+        <button t-if="options['company_size']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle filter_size_company filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Quy mô
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_company_size_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_career">
+        <button t-if="options['career']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle career_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Ngành nghề
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_career_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_reason_fail">
+        <button t-if="options['reason_fail']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle reason_fail_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Nguyên nhân
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_reason_fail_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_state">
+        <button t-if="options['state']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle state_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Thành phố
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_state_m2m"/>
+        </ul>
+    </div>
+    <div t-name="report_viewer.search_template_state_m2m">
+        <button t-if="options['state_m2m']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle state_m2m_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Tỉnh/Thành phố
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_state_m2m_m2m"/>
+        </ul>
+    </div>
+
+    <div t-name="report_viewer.search_template_selling_step">
+        <button t-if="options['selling_step']" type="button"
+                class="style_filter_option o_dropdown_toggler_btn btn btn-secondary dropdown-toggle selling_step_filter filter-width-layout-hd "
+                data-toggle="dropdown">
+            <span class="fa"/>
+            Bước bán hàng
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_selling_step_m2m"
+                context="{'tree_view_ref':'vt_crm.phase_configuration_tree_view_2'}"/>
+        </ul>
+    </div>
+
+    <t t-name="crm_dashboard.search_template">
+        <div class="row line-hd-800 swap-row" style="background:#F7F9FC">
+            <div class="col-xl-2 col-md-5 col-12  click-mg-lf swap-mg-left btn-group o_dropdown o_account_reports_filter_date swap-pd-hd m-l-10"
+                 t-if="options['date'] != None">
+                    <t t-call="crm_dashboard.search_template_date_filter"/>
+            </div>
+            <div class="col-xl-2 col-md-5 col-12  swap-mg-left btn-group o_dropdown o_account_reports_filter_branches swap-pd-hd m-l-10"
+                 t-if="options['branches']">
+                    <t t-call="crm_dashboard.search_template_branches"/>
+                </div>
+            <div class="col-xl-2 col-md-5 col-12  swap-mg-left btn-group o_dropdown o_account_reports_filter_branch swap-pd-hd m-l-10"
+                 t-if="options['branch']">
+                    <t t-call="crm_dashboard.search_template_branch"/>
+                </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_partner swap-pd-hd m-l-10"
+                 t-if="options['partner']">
+            <t t-call="crm_dashboard.search_template_partner"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_product swap-pd-hd m-l-10"
+                 t-if="options['product']">
+            <t t-call="report_viewer.search_template_product"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_department swap-pd-hd m-l-10"
+                 t-if="options['department']">
+            <t t-call="crm_dashboard.search_template_department"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_source swap-pd-hd m-l-10"
+                 t-if="options['source']">
+            <t t-call="report_viewer.search_template_source"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_product_group swap-pd-hd m-l-10"
+                 t-if="options['product_group']">
+            <t t-call="report_viewer.search_template_product_group"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_size_company swap-pd-hd m-l-10"
+                 t-if="options['company_size']">
+            <t t-call="report_viewer.search_template_size_company"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_campaign swap-pd-hd m-l-10"
+                 t-if="options['campaign']">
+            <t t-call="crm_dashboard.search_template_campaign"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_user swap-pd-hd m-l-10"
+                 t-if="options['user']">
+            <t t-call="crm_dashboard.search_template_user"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_res_users swap-pd-hd m-l-10"
+                 t-if="options['res_user']">
+            <t t-call="crm_dashboard.search_template_res_users"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_state swap-pd-hd m-l-10"
+                 t-if="options['state']">
+            <t t-call="report_viewer.search_template_state"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_state swap-pd-hd m-l-10"
+                 t-if="options['state_m2m']">
+            <t t-call="report_viewer.search_template_state_m2m"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_career swap-pd-hd m-l-10"
+                 t-if="options['career']">
+            <t t-call="report_viewer.search_template_career"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_reason_fail swap-pd-hd m-l-10"
+                 t-if="options['reason_fail']">
+            <t t-call="report_viewer.search_template_reason_fail"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_top_selling swap-pd-hd m-l-10"
+                 t-if="options['top_selling']">
+            <t t-call="report_viewer.search_template_top_selling"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_selling_step swap-pd-hd m-l-10"
+                 t-if="options['selling_step']">
+            <t t-call="report_viewer.search_template_selling_step"/>
+        </div>
+            <div class="col-xl-2 col-md-5  col-12 swap-mg-left btn-group o_dropdown o_account_reports_filter_cus_type swap-pd-hd m-l-10"
+                 t-if="options['cus_type']">
+            <t t-call="report_viewer.search_template_cus_type"/>
+        </div>
+            <div class="add-mg-fl-1024 display-flex-auto col-xl col-md-12 col-12 display-grid-hd box-margin" style="z-index:100">
+                        <div class="swap-mg-left-hd box-margin-update vt-button table-header-custom filter-width-layout-hd-update m-l-10"
+                             id="crm-reload-dashboard">Cập nhật</div>
+                <t t-if="options['export_excel']">
+                                <div class="box-margin-update vt-button table-header-manager add-mg-fl-1024-1" id="crm-export-data">
+                                    <img src="crm_dashboard/static/description/icon_export.png"/>
+                                </div>
+                            </t>
+                    </div>
+            </div>
+    </t>
+</templates>

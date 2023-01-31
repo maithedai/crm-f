@@ -1,0 +1,52 @@
+.report-container {
+    /* padding: 4px 16px; */
+    background: #fff;
+    border: 1px solid #d3d6db;
+    /*box-shadow: 0 4px 3px rgb(0, 0, 0, 10%);*/
+    margin-bottom: 16px !important;
+    background-clip: padding-box;
+    /* margin: 1rem; */
+}
+
+.btn_collapse {
+    font-size: large !important;
+    font-weight: bold !important;
+
+}
+
+.fa-star {
+    color: rgb(247, 187, 51);
+}
+
+div.report_workspace_search:focus-within {
+    outline: none !important;
+    border: 1px solid rgb(64, 51, 247);
+    box-shadow: 0 0 3px #1942fa;
+}
+
+.report_viewer_link {
+    margin-left: 10px;
+}
+
+.card-header {
+    background-color: unset;
+    border-bottom: unset;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.fa-angle-down {
+    color: black;
+}
+
+.fa-angle-up {
+    color: black;
+}
+
+button.btn.btn-link.btn_collapse {
+    font-size: large !important;
+    font-weight: bold !important;
+    color: black !important;
+}

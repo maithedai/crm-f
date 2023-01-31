@@ -1,0 +1,282 @@
+.mb--5{
+    margin-bottom: -5px
+}
+
+.sub-text{
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.total-number{
+    font-weight: 700;
+    line-height: 28px;
+    color: black;
+}
+
+.border-flex{
+   @media (max-width: 768px) {
+        border-bottom: 5px solid #D7D7D7
+   }
+   @media (min-width: 768.01px) {
+        border-right: 5px solid #D7D7D7
+   }
+}
+
+
+.border-grey{
+    border: 1px solid #BBB5B5;
+    box-shadow: 2px 2px 2px #D7D7D7;
+    border-radius: 15px;
+}
+.border-t{
+    border-top: 5px solid #D7D7D7
+}
+.border-l{
+    border-left: 5px solid #D7D7D7
+}
+.border-r{
+    border-right: 5px solid #D7D7D7
+}
+.border-b{
+    border-bottom: 5px solid #D7D7D7
+}
+html .o_web_client > .o_action_manager {
+    overflow: unset;
+}
+h1,h2,h3,h4,h5,h6{
+    color: black;
+}
+h6{
+    font-size: 11px;
+}
+
+.sub-text{
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.total-number{
+    font-weight: 700;
+    line-height: 28px;
+    font-size: 20px;
+    color: black;
+}
+.pre-total-number{
+    font-size: 12px;
+    font-weight: 400;
+    color: black
+}
+.border-flex-rb{
+   @media (max-width: 767.98px) {
+        border-bottom: 5px solid #D7D7D7
+   }
+   @media (min-width: 768px) {
+        border-right: 5px solid #D7D7D7
+   }
+}
+.border-flex-lr{
+   @media (max-width: 767.98px) {
+        border-right: 5px solid #D7D7D7
+   }
+   @media (min-width: 768px) {
+        border-left: 5px solid #D7D7D7
+   }
+}
+
+@media (min-width: 768px) {
+    .border-left-flex{
+        border-left: 5px solid #D7D7D7
+   }
+}
+
+@media (max-width: 767.98px) {
+    .border-right-flex{
+        border-right: 5px solid #D7D7D7
+   }
+}
+
+@media (max-width: 576px){
+    .border-bottom-sm{
+        border: None;
+        border-bottom: 5px solid #D7D7D7;
+    }
+}
+
+
+.rounded{
+    border-radius: 10px !important;
+}
+
+
+.unit{
+    margin-top: 35px;
+    font-size: 16px;
+    color: black;
+}
+
+
+.campaign-box{
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+
+.campaign-box-small {
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    height: auto;
+    width: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.kpi-box{
+    height: 190px;
+    width: 250px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+
+}
+.kpi-box-unit{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+
+@media (min-width: 992px){
+    .col-lg-30 {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+}
+
+@media (max-width: 1570px){
+    .xxl-font-size{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1570.01px){
+    .xl-font-size{
+        font-size: 16px;
+    }
+}
+
+.profile-employee{
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+@media (max-width: 1200px){
+    .border-bot-none{
+        border-bottom: None !important;
+    }
+}
+
+@media (min-width: 1200px){
+    .col-xl-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-xl-20{
+        flex: 0 0 20%;
+        max-width: 20%;
+
+    }
+
+}
+
+@media (min-width: 1440.01px){
+    .col-xxl-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-xxl-37 {
+        flex: 0 0 37%;
+        max-width: 37%;
+    }
+    .col-xxl-26 {
+        flex: 0 0 26%;
+        max-width: 26%;
+    }
+    .col-xxl-20{
+        flex: 0 0 20%;
+        max-width: 20%;
+
+    }
+}
+
+.note-comment{
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.note-comment .comment-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-left: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.note-comment:hover .comment-text {
+  visibility: visible;
+}
+.note-comment .comment-text {
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.unit-campaign-box-small{
+    margin-right: -15px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.dashboard_title{
+    font-weight: 400;
+    font-size: 20px;
+}
+//.o_action .o_control_panel{
+//    margin-bottom: 0 !important;
+//}
+
+.color-red{
+    color: red;
+}
+
+.color-green{
+    color: green;
+}
+
+
+

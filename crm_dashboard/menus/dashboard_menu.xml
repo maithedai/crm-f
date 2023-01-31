@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<menuitem id="menu_main"
+              name="CRM Dashboard"/>
+
+    <record id="action_bc_trading" model="ir.actions.client">
+		<field name="name">BC Trading</field>
+		<field name="tag">bc_trading</field>
+		<field name="context"
+			   eval="{'view': 'standard', 'parameter_type': 'inline', 'model': 'bc.trading'}"/>
+	</record>
+
+	<menuitem id="menu_bc_trading"
+              name="BC Trading"
+              parent="menu_main"
+              action="action_bc_trading"
+              sequence="1"/>
+</odoo>
