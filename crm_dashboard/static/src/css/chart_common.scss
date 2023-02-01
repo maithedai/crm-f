@@ -1,6 +1,14 @@
 .m-l-10 {
-        margin-left: 10px;
-    }
+    margin-left: 10px;
+}
+
+.m-l-20 {
+    margin-left: 20px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
 
 .vt-dashboard {
     width: 100%;
@@ -11,13 +19,26 @@
     overflow-x: none !important;
     background-color: #FFFFFF;
 
-    .db-grid {
+    .db-grid-700 {
         height: 700px;
     }
 
-    .box-item {
+    .db-grid-400 {
+        height: 400px;
+    }
+
+    @media (min-width: 1500px) {
+        .container, .o_container_small {
+            max-width: 1300px;
+        }
+    }
+
+    .box-item-220 {
         height: 220px;
-        background: red
+    }
+
+    .box-item-190 {
+        height: 190px;
     }
 
     .bx-sd {
@@ -1412,7 +1433,7 @@ input.layout-form-input-home {
         width: 100%
     }
     .o_action .o_control_panel {
-        margin-bottom: 20px !important;
+
     }
     .check_null_pie {
         width: 100%;
@@ -1439,7 +1460,7 @@ input.layout-form-input-home {
     }
 
     .o_action .o_control_panel {
-        margin-bottom: 20px !important;
+
     }
 
     .check_null_pie {
@@ -1457,7 +1478,7 @@ input.layout-form-input-home {
     }
 
     .o_action .o_control_panel {
-        margin-bottom: 20px !important;
+
     }
 
     .check_null_pie {
@@ -4054,7 +4075,7 @@ input.layout-form-input-home {
 }
 
 html .o_web_client > .o_action_manager > .o_action > .o_control_panel {
-    background-color: #F7F9FC !important;
+
 }
 
 html .o_web_client > .o_action_manager > .o_action {

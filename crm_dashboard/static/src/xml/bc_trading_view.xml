@@ -2,22 +2,133 @@
     <t t-name="crm_dashboard.bc_trading">
         <div class="vt-dashboard">
             <div class="container">
-                <div class="row">
-                    <div class="col-6 db-grid bx-sd">
-                        <canvas id="pieChart1"></canvas>
+                <div class="row m-b-10">
+                    <div class="col-6">
+                        <div class="bx-sd db-grid-700">
+                            <canvas id="pieChart1"></canvas>
+                        </div>
                     </div>
-                    <div class="col-6 db-grid d-flex flex-column justify-content-between">
-                        <div class="box-item bx-sd">
+                    <div class="col-6 db-grid-700 d-flex flex-column justify-content-between">
+                        <div class="box-item-220 bx-sd">
                             <canvas id="pieChart2"></canvas>
                         </div>
-                        <div class="box-item bx-sd">
+                        <div class="box-item-220 bx-sd">
                             <canvas id="pieChart3"></canvas>
                         </div>
-                        <div class="box-item bx-sd">
+                        <div class="box-item-220 bx-sd">
                             <canvas id="pieChart4"></canvas>
                         </div>
                     </div>
-              </div>
+                </div>
+
+                <div class="row m-b-10">
+                    <div class="col-8">
+                        <div class="bx-sd db-grid-400">
+                            <canvas id="columnChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-4 db-grid-400 d-flex flex-column justify-content-between">
+                        <div class="box-item-190 d-flex">
+                            <div class="col-6 bx-sd">
+                                <div class="container" style="height:100%">
+                                    <div class="d-flex flex-column align-items-center justify-content-center" style="height:100%;">
+                                        <div style="font-size:20px; font-weight:600">1,859,620</div>
+                                        <div style="font-size:11px;">Trading Resale - ARPU 30</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 bx-sd">
+                                <div class="container" style="height:100%">
+                                    <div class="d-flex flex-column align-items-center justify-content-center" style="height:100%;">
+                                        <div style="font-size:20px; font-weight:600">1,859,620</div>
+                                        <div style="font-size:11px;">Trading Resale - ARPU 30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box-item-190 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center" style="height:100%;">
+                                    <div style="font-size:24px; font-weight:600">2.04%</div>
+                                    <div style="font-size:11px;">Trading - Tỷ lệ hoàn đơn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-b-10">
+                    <div class="col-12">
+                        <table class="table table-bordered bx-sd">
+                            <thead style="background-color: #F2F0F0">
+                                <tr>
+                                    <th scope="col">ARPU</th>
+                                    <th scope="col">Sữa non goldilac</th>
+                                    <th scope="col">Rong nho</th>
+                                    <th scope="col">Bột cần tây Sikokata</th>
+                                    <th scope="col">Khay đa lộc</th>
+                                    <th scope="col">Nho xanh nam phi miền nam</th>
+                                    <th scope="col">Mận Úc</th>
+                                    <th scope="col">Bao tử lợi khuẩn</th>
+                                    <th scope="col">Kiwi vàng Đài Loan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row m-b-10">
+                    <div class="col-12" style="height: 300px;">
+                        <canvas class="bx-sd" id="columnChart2"></canvas>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="box-item-220 bx-sd" style="width:49%">
+                            <canvas id="pieChart5"></canvas>
+                        </div>
+                        <div class="box-item-220 bx-sd" style="width:49%">
+                            <canvas id="pieChart6"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </t>

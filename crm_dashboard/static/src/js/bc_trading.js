@@ -50,6 +50,12 @@ odoo.define('crm_dashboard.bc_trading', function (require) {
                     self.renderDoughnutChart2(self.values);
                     self.renderDoughnutChart3(self.values);
                     self.renderDoughnutChart4(self.values);
+
+                    self.renderColumnChart(self.values);
+                    self.renderColumnChart2(self.values);
+
+                    self.renderDoughnutChart5(self.values);
+                    self.renderDoughnutChart6(self.values);
                 });
             }
         },
@@ -107,6 +113,76 @@ odoo.define('crm_dashboard.bc_trading', function (require) {
                             '#C6CFD4',
                             '#FF5B69',
                             '#ED5753'
+                        ],
+                        hoverOffset: 0,
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'left',
+                            labels: {
+                                usePointStyle: true,
+                                pointStyle: 'rect',
+                                padding: 25,
+                                boxWidth: 9,
+                            }
+                        },
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                },
+            });
+        },
+
+        renderDoughnutChart5: function (data) {
+            const ctx = this.$el.find('#pieChart5');
+            const doughnutChart2 = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Công ty A', 'Công ty BB', 'Công ty C'],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: ['13', '43', '25'],
+                        backgroundColor: [
+                            '#F9A775',
+                            '#C6CFD4',
+                            '#AA8BC2',
+                        ],
+                        hoverOffset: 0,
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'left',
+                            labels: {
+                                usePointStyle: true,
+                                pointStyle: 'rect',
+                                padding: 25,
+                                boxWidth: 9,
+                            }
+                        },
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                },
+            });
+        },
+
+        renderDoughnutChart6: function (data) {
+            const ctx = this.$el.find('#pieChart6');
+            const doughnutChart2 = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Công ty A', 'Công ty BB', 'Công ty C'],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: ['13', '43', '25'],
+                        backgroundColor: [
+                            '#F9A775',
+                            '#C6CFD4',
+                            '#AA8BC2',
                         ],
                         hoverOffset: 0,
                     }]
@@ -190,6 +266,110 @@ odoo.define('crm_dashboard.bc_trading', function (require) {
                     },
                     responsive: true,
                     maintainAspectRatio: false,
+                },
+            });
+        },
+
+        renderColumnChart: function (data) {
+            var self = this;
+            const ctx = this.$el.find('#columnChart');
+            const columnChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Công ty A', 'Công ty BB', 'Công ty C', 'Công ty D', 'Công ty E', 'Công ty F', 'Công ty G'],
+                    datasets: [{
+                        label: 'DS Sale',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        backgroundColor: ['#36A0DF'],
+                        borderColor: ['#36A0DF'],
+                        borderWidth: 1
+                    }, {
+                        label: 'DS Resale',
+                        data: [56, 52, 40, 36, 40, 74, 60],
+                        backgroundColor: ['#F78C8D'],
+                        borderColor: ['#F78C8D'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                boxWidth: 9,
+                                padding: 30,
+                            },
+
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            type: 'linear',
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Doanh số (đồng)'
+                            }
+                        },
+                    },
+
+                },
+            });
+        },
+
+        renderColumnChart2: function (data) {
+            var self = this;
+            const ctx = this.$el.find('#columnChart2');
+            const columnChart2 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022',
+                             '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022',
+                             '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022', '16/03/2022'],
+                    datasets: [{
+                        label: 'DS Sale',
+                        data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40],
+                        backgroundColor: ['#FFD26A'],
+                        borderColor: ['#FFD26A'],
+                        borderWidth: 1
+                    }, {
+                        label: 'DS Resale',
+                        data: [56, 52, 40, 36, 40, 74, 60, 56, 52, 40, 36, 40, 74, 60, 56, 52, 40, 36, 40, 74, 60],
+                        backgroundColor: ['#84BE59'],
+                        borderColor: ['#84BE59'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                boxWidth: 9,
+                                padding: 30,
+                            },
+
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            type: 'linear',
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Doanh số (đồng)'
+                            }
+                        },
+                    },
+
                 },
             });
         },
