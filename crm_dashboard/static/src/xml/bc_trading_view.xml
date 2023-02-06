@@ -2,6 +2,101 @@
     <t t-name="crm_dashboard.bc_trading">
         <div class="vt-dashboard">
             <div class="container">
+                <div class="row d-flex m-b-10 m-t-10">
+                    <div class="col-12 d-flex justify-content-between m-b-10">
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Doanh MKT số sau Verify</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Doanh SALE số sau Verify</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Doanh RESALE số sau Verify</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">ARPU SALE sau Verify</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">ARPU RESALE Sau Verify</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-around">
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Chi phí hàng ngày</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Chi phí hàng ngày / Doanh số MKT</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Tỷ lệ hoàn đơn  SALE</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 db-grid-100 bx-sd">
+                            <div class="container" style="height:100%">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
+                                    <div class="d-flex justify-content-center text-center" style="font-size:12px;font-weight:600">Tỷ lệ hoàn đơn  RESALE</div>
+                                    <div class="d-flex align-items-center" style="font-size:16px;font-weight:600;height:70px">156,800,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row m-b-10">
                     <div class="col-6">
                         <div class="bx-sd db-grid-700">
@@ -31,17 +126,19 @@
                         <div class="box-item-190 d-flex">
                             <div class="col-6 bx-sd">
                                 <div class="container" style="height:100%">
-                                    <div class="d-flex flex-column align-items-center justify-content-center" style="height:100%;">
+                                    <div class="d-flex flex-column align-items-center justify-content-center"
+                                         style="height:100%;">
                                         <div style="font-size:20px; font-weight:600">1,859,620</div>
-                                        <div style="font-size:11px;">Trading Resale - ARPU 30</div>
+                                        <div style="font-size:10px;">Trading Resale - ARPU 30</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 bx-sd">
                                 <div class="container" style="height:100%">
-                                    <div class="d-flex flex-column align-items-center justify-content-center" style="height:100%;">
+                                    <div class="d-flex flex-column align-items-center justify-content-center"
+                                         style="height:100%;">
                                         <div style="font-size:20px; font-weight:600">1,859,620</div>
-                                        <div style="font-size:11px;">Trading Resale - ARPU 30</div>
+                                        <div style="font-size:10px;">Trading Resale - ARPU 30</div>
                                     </div>
                                 </div>
                             </div>
@@ -49,9 +146,10 @@
 
                         <div class="box-item-190 bx-sd">
                             <div class="container" style="height:100%">
-                                <div class="d-flex flex-column align-items-center justify-content-center" style="height:100%;">
+                                <div class="d-flex flex-column align-items-center justify-content-center"
+                                     style="height:100%;">
                                     <div style="font-size:24px; font-weight:600">2.04%</div>
-                                    <div style="font-size:11px;">Trading - Tỷ lệ hoàn đơn</div>
+                                    <div style="font-size:10px;">Trading - Tỷ lệ hoàn đơn</div>
                                 </div>
                             </div>
                         </div>
@@ -59,19 +157,19 @@
                 </div>
 
                 <div class="row m-b-10">
-                    <div class="col-12">
+                    <div class="col-12 overflow-auto">
                         <table class="table table-bordered bx-sd">
                             <thead style="background-color: #F2F0F0">
                                 <tr>
-                                    <th scope="col">ARPU</th>
-                                    <th scope="col">Sữa non goldilac</th>
-                                    <th scope="col">Rong nho</th>
-                                    <th scope="col">Bột cần tây Sikokata</th>
-                                    <th scope="col">Khay đa lộc</th>
-                                    <th scope="col">Nho xanh nam phi miền nam</th>
-                                    <th scope="col">Mận Úc</th>
-                                    <th scope="col">Bao tử lợi khuẩn</th>
-                                    <th scope="col">Kiwi vàng Đài Loan</th>
+                                    <th>ARPU</th>
+                                    <th>Sữa non goldilac</th>
+                                    <th>Rong nho</th>
+                                    <th>Bột cần tây Sikokata</th>
+                                    <th>Khay đa lộc</th>
+                                    <th>Nho xanh nam phi miền nam</th>
+                                    <th>Mận Úc</th>
+                                    <th>Bao tử lợi khuẩn</th>
+                                    <th>Kiwi vàng Đài Loan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,7 +217,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row m-b-10">
                     <div class="col-12 d-flex justify-content-between">
                         <div class="box-item-220 bx-sd" style="width:49%">
                             <canvas id="pieChart5"></canvas>
@@ -127,6 +225,93 @@
                         <div class="box-item-220 bx-sd" style="width:49%">
                             <canvas id="pieChart6"></canvas>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row m-b-10">
+                    <div class="col-12 overflow-auto">
+                        <table class="table table-bordered bx-sd">
+                            <thead style="background-color: #F2F0F0">
+                                <tr>
+                                    <th class="col-1">NVBH</th>
+                                    <th class="col-3">Công ty</th>
+                                    <th class="col-1">SĐT mới</th>
+                                    <th class="col-1">SĐT vớt</th>
+                                    <th class="col-1">SĐT Resale</th>
+                                    <th class="col-1">Đơn mới</th>
+                                    <th class="col-1">Đơn vớt</th>
+                                    <th class="col-1">Đơn Resale</th>
+                                    <th class="col-1">Danh sách mới</th>
+                                    <th class="col-1">Danh sách vớt</th>
+                                    <th class="col-1">Danh sách Resale</th>
+                                    <th class="col-1">Tl chốt mới</th>
+                                    <th class="col-1">Tl chốt vớt</th>
+                                    <th class="col-1">Tl chốt Resale</th>
+                                    <th class="col-1">Tl chốt Resale</th>
+                                    <th class="col-1">Tl chốt Resale</th>
+                                    <th class="col-1">>Tl chốt Resale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

@@ -451,11 +451,11 @@
             <div class="add-mg-fl-1024 display-flex-auto display-grid-hd box-margin" style="z-index:100">
                         <div class="swap-mg-left-hd box-margin-update vt-button table-header-custom filter-width-layout-hd-update"
                              id="crm-reload-dashboard">Cập nhật</div>
-                <t t-if="options['export_excel']">
-                            <div class="box-margin-update vt-button table-header-manager add-mg-fl-1024-1" id="crm-export-data">
-                                <img src="crm_dashboard/static/description/icon_export.png"/>
-                            </div>
-                        </t>
+<!--                <t t-if="options['export_excel']">-->
+<!--                            <div class="box-margin-update vt-button table-header-manager add-mg-fl-1024-1" id="crm-export-data">-->
+<!--                                <img src="crm_dashboard/static/description/icon_export.png"/>-->
+<!--                            </div>-->
+<!--                        </t>-->
                 </div>
             </div>
     </t>

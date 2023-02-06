@@ -40,6 +40,8 @@ odoo.define('crm_dashboard.bc_trading', function (require) {
                     });
 //                    $(".o_control_panel").addClass("o_hidden");
                     $(".o_content").addClass("o_hidden");
+                    $(".o_cp_bottom_left").addClass("o_hidden");
+                    $(".o_cp_bottom_right").addClass("p-l-50");
                     $(".o_cp_searchview").addClass("o_hidden");
                     $(".o_search_options").css({'width': '100%'});
 //                    $(".o_cp_bottom").addClass("o_hidden");

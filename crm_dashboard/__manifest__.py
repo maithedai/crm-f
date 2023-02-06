@@ -33,6 +33,7 @@
             'crm_dashboard/static/src/lib/css/Chart.min.css',
             'crm_dashboard/static/src/css/report_viewer.scss',
             'crm_dashboard/static/src/css/chart_common.scss',
+            'crm_dashboard/static/src/css/dashboard_scss.scss',
             'crm_dashboard/static/src/js/dashboard_header.js',
             'crm_dashboard/static/src/js/bc_trading.js',
         ],
